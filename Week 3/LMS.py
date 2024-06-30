@@ -106,3 +106,18 @@ class EBook(Book):
             f"Format: {self.format}\n"
         )
 
+if __name__=="__main__":
+    # Demonstrate Book usage
+    my_book = Book("The Hitchhiker's Guide to the Galaxy", "Douglas Adams", 195)
+    print(f"Book title: {my_book.get_title()}")
+
+    my_book.set_title("A New Book Title")
+    print(f"Book title after change: {my_book.get_title()}")
+
+    estimated_time = Book.reading_time(my_book.get_pages(), 300)  # Class method
+    print(f"Estimated reading time (300 words per page): {estimated_time:.2f} minutes")
+
+
+# Demonstrate EBook usage
+    my_ebook = EBook("The Lord of the Rings", "J.R.R. Tolkien", 1178, "epub")
+    print(my_ebook)
